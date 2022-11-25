@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
+  firstData: number=0;
+  secondData: string="";
+  thirdData: string="";
+  fourthData: number=0;
+  result:string = "";
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
   empInfo=[
     {
       empid: 1,
@@ -37,8 +38,26 @@ export class EmployeeComponent implements OnInit {
       empsal: 60000
     }
   ]
+  
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  solution(fd:number,sd:string,td:string, fod:number)
+  {
+
+this.empInfo.push({'empid' : fd, 'empname':sd, 'empdept':td,'empsal':fod})
+    console.log(this.empInfo)
+   }
+  
   search(emp:any){
     console.log(emp.empid);
   }
+  
+  ondelete(emp:any){
+    this.empInfo.splice(emp, 1);
+  }
+
+
 
 }

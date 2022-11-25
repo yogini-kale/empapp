@@ -17,15 +17,30 @@
             </tr>
             </thead>
             <tbody>
-                <tr (click)="search(emp)" *ngFor="let emp of empInfo">
+                <tr (click)="search(emp)" *ngFor="let emp of empInfo, index as i">
                     <td>{{emp.empid}}</td>
                     <td>{{emp.empname}}</td>
                     <td>{{emp.empdept}}</td>
                     <td>{{emp.empsal}}</td>
+                    <td>
+                        <button (click)="ondelete(i)" class="btn btn-success">Remove</button>
+                    </td>
                 </tr>
             </tbody>
             </table>
         </div>
     </div>
+    </div>
+
+    <div class="container" style="margin-top: 5%;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" >
+                <input class="number" placeholder="Emp Id" [(ngModel)] = "firstData">
+                <input class="text" placeholder="Emp Name" [(ngModel)] = "secondData" >
+                <input class="text" placeholder="Department" [(ngModel)] = "thirdData">
+                <input class="number" placeholder="Salary" [(ngModel)] = "fourthData">
+                <button class="btn btn-primary" (click)="solution(firstData,secondData,thirdData,fourthData)">Add</button>
+            </div>
+        </div>
     </div>
     
