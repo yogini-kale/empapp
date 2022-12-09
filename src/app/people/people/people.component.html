@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="container-fluid">
+    <table class="table table-striped" style="overflow: auto;">
+        <thead class="table-dark">
+            <tr>
+                <td scope="col">Name</td>
+                <td scope="col">Height</td>
+                <td scope="col">Mass</td>
+                <td scope="col">hair Color</td>
+                <td scope="col">Skin Color</td>
+                <td scope="col">Eye Color</td>
+                <td scope="col">Birth Year</td>
+                <td scope="col">Gender</td>
+                <td scope="col">Films</td>
+                <td scope="col">Vehicles</td>
+                <td scope="col">StarShips</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ppl of peopleInfo">
+                <td scope="row">{{ppl.name}}</td>
+                <td scope="row">{{ppl.height}}</td>
+                <td scope="row">{{ppl.mass}}</td>
+                <td scope="row">{{ppl.hair_color}}</td>
+                <td scope="row">{{ppl.skin_color}}</td>
+                <td scope="row">{{ppl.eye_color}}</td>
+                <td scope="row">{{ppl.birth_year}}</td>
+                <td scope="row">{{ppl.gender}}</td>
+                <td scope="row">
+                    <div *ngFor="let flm of ppl.films">
+                        <a>{{flm}}</a>
+
+                    </div>
+                </td>
+                <td scope="row">
+                    <div *ngFor="let veh of ppl.vehicles">
+                        <a>{{veh}}</a>
+                    </div>
+                </td>
+                <td scope="row">
+                    <div *ngFor="let str of ppl.starships">
+                        <a>{{str}}</a>
+
+                    </div>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+</div>
+</div>
+
+<!-- <div>
+    <button class="btn btn-success" (click)="pplDetails()">Information</button>
+</div> -->

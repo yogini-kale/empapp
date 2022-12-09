@@ -10,18 +10,36 @@
             <table class="table">
                 <thead>
                     <tr>
-                <th>Emp id</th>
+                <!-- <th>Emp id</th> -->
                 <th>Emp Name</th>
                 <th>Department</th>
                 <th>Salary</th>
+                <th>Mobile</th>
+                <th>Address</th>
             </tr>
             </thead>
             <tbody>
                 <tr (click)="search(emp)" *ngFor="let emp of empInfo, index as i">
-                    <td>{{emp.empid}}</td>
+                    <!-- <td>{{emp.empid}}</td> -->
                     <td>{{emp.empname}}</td>
                     <td>{{emp.empdept}}</td>
                     <td>{{emp.empsal}}</td>
+                    <td>
+                        <div>
+                            <a>Office: {{emp.mobile.office}}</a><br>
+                            <a>Home: {{emp.mobile.home}}</a><br>
+                            <a>Personal: </a>
+                            <div *ngFor="let pers of emp.mobile.personal">
+                                <a>{{pers}}</a><br>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                         <a>Home: {{emp.address.home}}</a><br>
+                         <a>Office: {{emp.address.office}}</a><br>
+                        </div>
+                    </td>
                     <td>
                         <button (click)="ondelete(i)" class="btn btn-success">Remove</button>
                     </td>
@@ -39,8 +57,40 @@
                 <input class="text" placeholder="Emp Name" [(ngModel)] = "secondData" >
                 <input class="text" placeholder="Department" [(ngModel)] = "thirdData">
                 <input class="number" placeholder="Salary" [(ngModel)] = "fourthData">
-                <button class="btn btn-primary" (click)="solution(firstData,secondData,thirdData,fourthData)">Add</button>
+                <input class="number" placeholder="Mobile" [(ngModel)] = "fifthData">
+
+                <button class="btn btn-primary" (click)="solution(firstData,secondData,thirdData,fourthData,fifthData,sixData)">Add</button>
             </div>
         </div>
     </div>
+
+    <div >
+    <div class="row justify-content-center align-middle" style="margin-top: 10%;">
+        <input type="number" placeholder="First Number" class="row justify-content-center align-middle" >
+        <input type="number" placeholder="Second Number" class="row justify-content-center align-middle">
+    </div>
+</div>
+
+    <div>
+        <button class="btn btn-success" (click)="result ()"> Addition </button>
+        <button class="btn btn-success" (click)="result"> Substraction </button>
+        <button class="btn btn-success" (click)="result"> Multiplication </button>
+        <button class="btn btn-success" (click)="result"> Division </button>
+    </div>
     
+
+
+     <!-- Function with parameter -->
+     <div>
+        <button class="btn btn-success" (click)="getName ('Yogini Kale')" style="margin-top: 1%;">Click me for String</button>
+        <button class="btn btn-success" (click)="getNumber (100)" style="margin: 5%;">Click me for Number</button>
+
+     </div>
+
+     <div>
+        <input type="text" [(ngModel)]="message">
+        <button (click)="hello(message)">Welcome message</button>
+        {{message}}
+     </div>
+
+     <button class="success" (click)="empDetails()">Employee Data</button>
