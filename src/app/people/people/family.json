@@ -1,0 +1,16 @@
+[
+    
+    {
+        "Name":"Damodar",
+        "Wife":"Seema",
+        "Children": {
+            "Daughter1":"Mohini", "Daughter2":"Yogini","Son":"Pratik" 
+    },
+    "Aatya":{
+        "Aatya1":"Anu","Aatya2":"Sushila","Aatya3":"Mukta"
+    },
+    "Mavshi":{
+        "Mavshi1":"Manda","Mavshi2":"Varsha","Mavshi3":"Jyoti"
+    }
+}
+]

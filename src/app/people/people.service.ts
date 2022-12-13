@@ -12,5 +12,13 @@ export class PeopleService {
   getPeople(){
     return this.http.get("http://localhost:3000/people");
   }
+
+  getActor(){
+    return this.http.get("http://localhost:3000/actor");
+  }
+
+  getFam(){
+    return this.http.get("http://localhost:3000/family")
+  }
  
 }
