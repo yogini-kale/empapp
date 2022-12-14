@@ -15,10 +15,12 @@ export class PeopleComponent implements OnInit {
     DOB: 27,
     Place: "Pune"
   }
+  check: boolean=true;
 
 // peopleInfo:any;
 actorInfo:any;
 familyInfo:any;
+studentInfo:any;
   constructor(private peopleService:PeopleService) { 
    
 
@@ -50,6 +52,7 @@ familyInfo:any;
     //this.actorDetails();
 
     this.family();
+    this.getStudent();
   }
   
 // pplDetails(){
@@ -65,7 +68,23 @@ actorDetails(){
 family(){
   this.peopleService.getFam().subscribe (rev => this.familyInfo=rev);
   }
+  changeColor(){
+    this.check=!this.check;
+    // if (this.colorCheck===true) {
+    //   this.colorCheck=false
+    // }
+    // else {
+    //   this.colorCheck=true
+    // }
+   //this.colorCheck=this.colorCheck===true?false:true;
 
+    
+  }
+  getStudent(){
+    this.peopleService.getStud().subscribe (data => {
+      this.studentInfo=data
+    });
+  }
    
 }
 
