@@ -167,9 +167,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let std of studentInfo">
+                <tr *ngFor="let std of studentInfo" [ngClass]="(std.marks<=60) ? 'clrGreen':'clrRed'">
                     <td scope="row">{{std.name}}</td>
-                    <td scope="row" [ngClass]="std.marks<=60 ? 'clrGreen':'clrRed'">{{std.marks}}</td>
+                    <td scope="row" >{{std.marks}}</td>
                 </tr>
             </tbody>
             </table>
